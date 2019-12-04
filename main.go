@@ -6,7 +6,7 @@ import ("fmt"
 
 func SquareHappy(n int) (result int) {
   for n > 0 {
-    result += int(math.Mod(float64(n), 10))
+    result += int(math.Pow(math.Mod(float64(n), 10), 2))
     n /= 10
   }
 
@@ -14,10 +14,6 @@ func SquareHappy(n int) (result int) {
 }
 
 func isHappy(n int) bool {
-
-  if n > 1 && n < 10 {
-    return false
-  }
 
   seen := make(map[int]bool)
   seen[n] = true
@@ -39,5 +35,5 @@ func isHappy(n int) bool {
 }
 
 func main() {
-  fmt.Printf("is Happy %v\n", isHappy(19))
+  fmt.Printf("is Happy %v\n", isHappy(7))
 }

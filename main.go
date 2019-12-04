@@ -15,7 +15,7 @@ func SquareHappy(n int) (result int) {
 
 func isHappy(n int) bool {
 
-  if n < 10 {
+  if n > 1 && n < 10 {
     return false
   }
 
